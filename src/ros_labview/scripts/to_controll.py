@@ -15,7 +15,7 @@
 # -----------------------------------------
 import numpy as np
 import rospy
-from vechle import vechle
+from vehicle import vehicle
 from std_msgs.msg  import String
 from ros_labview_dummy.msg import from_rio
 #from ros_labview.msg import to_rio
@@ -38,7 +38,7 @@ front_sensors = sensor_values()
 # Create a publisher node so the rio can subsribe on the destinations.
 #pub_handle = rospy.Publisher(publish_from_tx2_to_rio_name, data_class=to_rio, queue_size=1)
 pub_handle = rospy.Publisher(publish_status_name, data_class=vehicle_status, queue_size=1)
-rospy.init_node('tx2_to_controll.py', anonymous=True)
+rospy.init_node('tx2_to_controll.py', anonymous=False)
 update_rate = rospy.Rate(10) #100hz
 # Subscribe to the data from rio
 status = 0       # This is a vehicle_status struct
@@ -134,7 +134,7 @@ def main():
         counter += 1
     #pas
 
-car = vechle()
+car = vehicle()
 if __name__ == "__main__":
     rospy.loginfo("Start sub from tx2")
     rospy.Subscriber(subscibe_from_rio_to_tx2_name,from_rio, read_from_rio )

@@ -5,9 +5,9 @@
 import rospy
 import numpy as np
 
-class vechle(object):
+class vehicle(object):
 
-    """Docstring for vechle(object. """
+    """Docstring for vehicle(object. """
 
     def __init__(self):
         """TODO: to be defined1. """

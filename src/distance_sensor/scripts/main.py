@@ -19,7 +19,7 @@ import smbus
 # Globals.
 data = sensor_values()
 pub  = rospy.Publisher('sensor_distance', data_class=sensor_values, queue_size=1000)
-rospy.init_node('Teraranger', anonymous=False)
+rospy.init_node('teraranger', anonymous=False)
 update_rate = rospy.Rate(70)
 
 DEVICE_ADDRESS_LEFT = 0x31

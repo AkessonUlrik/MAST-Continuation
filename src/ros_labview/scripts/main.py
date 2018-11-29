@@ -17,7 +17,7 @@
 # -----------------------------------------
 import rospy
 import numpy
-from vechle import vechle
+from vehicle import vehicle
 from std_msgs.msg  import String
 from ros_labview_dummy.msg import from_rio
 from ros_labview.msg import to_rio
@@ -48,7 +48,7 @@ tx2_emstop_pub_handle = rospy.Publisher(publish_emstop_name, data_class=stop, qu
 #tx2_to_ext_pub_handle = rospy.Publisher(publish_vehicle_status, data_class=vehicle_status, queue_size=1)
 
 # Create the nodes in the car.
-rospy.init_node('tx2_mani.py', anonymous=True)
+rospy.init_node('tx2_main', anonymous=False)
 update_rate = rospy.Rate(100) #100hz
 
 def send_to_rio():
@@ -177,6 +177,6 @@ def main():
         counter += 1
     #pass
 
-car = vechle()
+car = vehicle()
 if __name__ == "__main__":
     main()

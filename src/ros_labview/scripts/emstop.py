@@ -30,7 +30,7 @@ emStop = 0
 # Create publisher
 pubHandle = rospy.Publisher(stopInternal, data_class=stop, queue_size = 1)
 # Create subscriber
-rospy.init_node(stopExternal, anonymous=True)
+rospy.init_node(stopExternal, anonymous=False)
 # Set refresh rate
 updateRate = rospy.Rate(100) #Hz
 
